@@ -278,6 +278,7 @@ body{
     border-radius: 10px;
     height: 30px;
     width: 100px;
+    overflow: auto;
     color: white;
     transition: all .7s ease-out;
 }
@@ -378,6 +379,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow: auto;
     width: 80%;
     height: 100%;
 }

@@ -104,7 +104,6 @@ const saveChanges = async (id_miembro) => {
         newValues.push(newValue);
     }
 
-    console.log("newValues" , newValues);
     try {
         const response = await fetch(`http://localhost:3009/ADB/miembro/${id_miembro}`, {
             method: 'PUT',
@@ -120,7 +119,7 @@ const saveChanges = async (id_miembro) => {
 
         });
 
-        console.log("response> ",response);
+        console.log(response.error);
         
         if (response.status !== 200) throw new Error('Error al actualizar el Miembro. Front');
         

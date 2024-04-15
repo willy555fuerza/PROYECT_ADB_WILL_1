@@ -16,7 +16,6 @@ class Usersmodel {
             const request = pool.request();  
             const result = await request.query("SELECT * FROM miembro");
             await disconnectToMssql(pool);
-            console.log(result.recordset);
             if (result.recordset.length === 0) {
                 return { data: null, error: true };
             }
@@ -89,9 +88,11 @@ class Usersmodel {
             if (!pool) {
                 throw new Error('Error al conectar con MSSQL');
             }
-            
+            console.log(nombre_miembro)
+            console.log(id_miembro)
+
             // Consulta para actualizar un usuario en la base de datos
-            const query = `UPDATE miembro SET nombre_miembro = '${nombre_miembro}', apellidos = '${apellidos}, ci = '${ci}' WHERE id_miembro = ${id_miembro}`;
+            const query = `UPDATE miembro SET nombre_miembro ='${nombre_miembro}', apellidos = '${apellidos}', ci = '${ci}' WHERE id_miembro = '${id_miembro}';`
             await pool.request().query(query);
     
             console.log('Miembro actualizado correctamente');

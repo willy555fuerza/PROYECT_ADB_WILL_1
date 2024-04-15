@@ -377,6 +377,7 @@ body{
     backdrop-filter: blur(15px);
     display: flex;
     flex-direction: column;
+    overflow: auto;
     align-items: center;
     width: 80%;
     height: 100%;
